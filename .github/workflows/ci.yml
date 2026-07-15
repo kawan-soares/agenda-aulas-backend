@@ -22,6 +22,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+          cache-dependency-path: agenda-aulas/pom.xml
 
       - name: Rodar os testes (JUnit + Mockito)
-        run: mvn -B test
+        run: cd agenda-aulas && mvn -B test
