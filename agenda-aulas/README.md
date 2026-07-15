@@ -1,4 +1,6 @@
-    # Agenda Aulas
+![CI](https://github.com/kawan-soares/agenda-aulas-backend/actions/workflows/ci.yml/badge.svg)
+
+# Agenda Aulas
 
 Sistema de agendamento de aulas de teclado. Professor cadastra horários disponíveis, aluno reserva.
 Full-stack: **Spring Boot (Java) + PostgreSQL** no back, **React** no front, autenticação real com **JWT**.
@@ -18,6 +20,12 @@ Spring Boot (backend, porta 8080)
       ↓
 H2 (local, arquivo em disco) ou PostgreSQL (produção)
 ```
+
+## Testes
+
+- **Testes unitários** (JUnit 5 + Mockito): cobrem as regras de negócio de `BookingService` e `AvailabilityService` — prevenção de reserva duplicada, permissões de cancelamento/remoção, validação de horários.
+- **CI/CD** (GitHub Actions): a cada push ou pull request pra `main`, os testes rodam automaticamente. Veja o badge no topo deste README ou a aba [Actions](https://github.com/kawan-soares/agenda-aulas-backend/actions).
+- **Testes E2E** (Cypress): fluxo completo de autenticação, agendamento e regras de negócio, no repositório [agenda-aulas-e2e-tests](https://github.com/kawan-soares/agenda-aulas-e2e-tests).
 
 ## Como rodar localmente
 
@@ -90,4 +98,3 @@ Abre em `http://localhost:5173`.
 - Notificação por e-mail/WhatsApp quando uma aula é reservada ou cancelada
 - Horários recorrentes (toda terça às 15h, por exemplo) em vez de criar um por um
 - Página de perfil pra aluno/professor editar dados
-- Testes automatizados (JUnit no backend) — ótimo próximo passo pra reforçar ainda mais o portfólio
